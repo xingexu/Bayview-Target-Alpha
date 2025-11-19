@@ -56,15 +56,6 @@ const Team: React.FC = () => {
       year: "Grade 11",
       major: "",
       bio: ""
-    },
-    {
-      id: 7,
-      name: "Mathew Singh",
-      role: "Vice President",
-      school: "Holy Trinity School",
-      year: "Grade 11",
-      major: "",
-      bio: ""
     }
   ];
 
