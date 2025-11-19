@@ -1,11 +1,11 @@
 .hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  padding: 6rem 0;
-  min-height: 80vh;
+  background: var(--background-color);
+  padding: 8rem 0;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero::before {
@@ -15,10 +15,113 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48ZyBpZD0ic2FrdXJhLXNtYWxsIj48cGF0aCBkPSJNMTAwIDIwIFE5MCAxNSA4NSAyNSBRODAgMzUgOTAgMzUgUTEwMCAzNSAxMTAgMjUgUTEwNSAxNSAxMDAgMjAiIGZpbGw9IiNGN0E0QzEiIG9wYWNpdHk9IjAuMyIvPjxwYXRoIGQ9Ik0xMDAgMjAgUTExMCAxNSAxMTUgMjUgUTEyMCAzNSAxMTAgMzUgUTEwMCAzNSA5MCAyNSBROTUgMTUgMTAwIDIwIiBmaWxsPSIjRjdBNEMxIiBvcGFjaXR5PSIwLjMiLz48cGF0aCBkPSJNMTAwIDIwIFE5MCAzMCAxMDAgNDAgUTEwMCA1MCA5NSA1MCBRMTAwIDUwIDEwMCA0MCBRMTAwIDMwIDEwMCAyMCIgZmlsbD0iI0Y3QTRDMSIgb3BhY2l0eT0iMC4zIi8+PHBhdGggZD0iTTEwMCAyMCBRMTAwIDMwIDEwMCA0MCBRMTAwIDUwIDEwNSA1MCBRMTAwIDUwIDEwMCA0MCBRMTAwIDMwIDEwMCAyMCIgZmlsbD0iI0Y3QTRDMSIgb3BhY2l0eT0iMC4zIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzIiBmaWxsPSIjRkZEOEYwIiBvcGFjaXR5PSIwLjQiLz48L2c+PC9kZWZzPjx1c2UgaHJlZj0iI3Nha3VyYS1zbWFsbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAsNDApIHNjYWxlKDAuMykiLz48dXNlIGhyZWY9IiNzYWt1cmEtc21hbGwiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0MCwxNDApIHNjYWxlKDAuMjUpIi8+PHVzZSBocmVmPSIjc2FrdXJhLXNtYWxsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCwxMjApIHNjYWxlKDAuMjgpIi8+PHVzZSBocmVmPSIjc2FrdXJhLXNtYWxsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjAsNjApIHNjYWxlKDAuMjcpIi8+PC9zdmc+');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  opacity: var(--sakura-opacity);
   pointer-events: none;
+  z-index: 1;
+}
+
+[data-show-illustrations="false"] .hero::before {
+  display: none;
+}
+
+/* Sakura Branches overlay */
+.hero-branches {
+  position: absolute;
+  left: -5vw;
+  right: -5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hero-branches img {
+  width: 38vw;
+  max-width: 460px;
+  min-width: 220px;
+  filter: drop-shadow(0 6px 18px rgba(247, 164, 193, 0.35));
+  animation: treeFloat 16s ease-in-out infinite;
+}
+
+.hero-branches-top {
+  display: none;
+}
+
+.hero-branches-bottom {
+  position: absolute;
+  bottom: -50px;
+}
+
+.hero-branches-top img {
+  opacity: var(--tree-opacity-top, 0.95);
+}
+
+.hero-branches-bottom img {
+  opacity: var(--tree-opacity-bottom, 0.95);
+}
+
+.hero-branches-top img:last-child,
+.hero-branches-bottom img:last-child {
+  transform: scaleX(-1);
+}
+
+[data-show-illustrations="false"] .hero-branches {
+  display: none;
+}
+
+html[data-hero-in-view="false"] .hero-branches {
+  opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero-branches-top {
+    top: -20px;
+  }
+
+  .hero-branches img {
+    width: 40vw;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-branches {
+    display: none;
+  }
+}
+
+@keyframes treeFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Falling Petal Animation */
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
 }
 
 .container {
@@ -29,41 +132,56 @@
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+
+.hero-text {
+  color: var(--text-primary);
   position: relative;
   z-index: 10;
 }
 
-.hero-text {
-  color: white;
-}
-
 .hero-title {
   font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 .highlight {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   position: relative;
@@ -86,7 +204,7 @@
 }
 
 .hero-buttons button {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: #FF69B4;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -94,49 +212,76 @@
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-buttons button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 2 Q8 4 6 4 Q4 4 3 6 Q2 8 4 8 Q6 8 8 6 Q10 4 10 2" fill="white" opacity="0.2"/><path d="M10 2 Q12 4 14 4 Q16 4 17 6 Q18 8 16 8 Q14 8 12 6 Q10 4 10 2" fill="white" opacity="0.2"/><circle cx="10" cy="10" r="2" fill="white" opacity="0.3"/></svg>');
+  background-size: 30px 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-buttons button:hover::before {
+  opacity: 0.3;
 }
 
 .hero-buttons button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--shadow-hover);
-  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  background: #FF1493;
 }
 
 .hero-stats {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 1rem;
+  background: var(--card-color);
+  padding: 2.25rem 2.75rem;
+  border-radius: 28px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 30px var(--shadow-card), 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  flex: 0 1 auto;
 }
 
 .stat-item:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px var(--shadow-hover);
 }
 
 .stat-item h3 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
   display: block;
+  letter-spacing: -0.01em;
 }
 
 .stat-item p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  color: var(--text-secondary);
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .hero-background {
@@ -145,10 +290,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
+  overflow: hidden;
+}
+
+/* Floating cherry blossom petals */
+.hero-background::before,
+.hero-background::after {
+  display: none;
 }
 
 /* Mobile responsiveness - iPhone 13 and similar */

@@ -10,6 +10,8 @@ const Contact: React.FC = () => {
     interest: 'general'
   });
 
+  // Form handlers (ready for future form implementation)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -17,6 +19,7 @@ const Contact: React.FC = () => {
     });
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
@@ -36,7 +39,7 @@ const Contact: React.FC = () => {
       <div className="container">
         <h2 className="section-title">Get in Touch</h2>
         <p className="section-subtitle">
-          Have questions about joining York Region Target Alpha? 
+          Have questions about joining Markham Target Alpha? 
           We'd love to hear from you!
         </p>
         
@@ -72,7 +75,7 @@ const Contact: React.FC = () => {
               <div className="contact-icon">📍</div>
               <div>
                 <h4>Location</h4>
-                <p>Greater Toronto Area, Ontario, Canada</p>
+                <p>Markham, Ontario, Canada</p>
               </div>
             </div>
           </div>

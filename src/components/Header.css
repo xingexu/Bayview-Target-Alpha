@@ -1,11 +1,12 @@
 .header {
-  background: white;
-  padding: 1rem 0;
+  background: rgba(255, 253, 249, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid var(--border-color);
+  box-shadow: 0 2px 16px var(--shadow-card);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header-content {
@@ -18,11 +19,15 @@
 }
 
 .logo h2 {
-  color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
 }
 
 .logo h2:hover {
@@ -65,11 +70,11 @@
 
 .nav-links a:not(.join-btn):hover {
   color: var(--primary-color);
-  background: rgba(5, 150, 105, 0.05);
+  background: rgba(255, 105, 180, 0.1);
 }
 
 .join-btn {
-  background: var(--primary-color);
+  background: #FF69B4;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -77,15 +82,34 @@
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  border: 2px solid var(--primary-color);
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+  border: 2px solid #FF69B4;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.join-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M7.5 1.5 Q6 3 4.5 3 Q3 3 2.25 4.5 Q1.5 6 3 6 Q4.5 6 6 4.5 Q7.5 3 7.5 1.5" fill="white" opacity="0.2"/><path d="M7.5 1.5 Q9 3 10.5 3 Q12 3 12.75 4.5 Q13.5 6 12 6 Q10.5 6 9 4.5 Q7.5 3 7.5 1.5" fill="white" opacity="0.2"/><circle cx="7.5" cy="7.5" r="1.5" fill="white" opacity="0.3"/></svg>');
+  background-size: 20px 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.join-btn:hover::before {
+  opacity: 0.3;
 }
 
 .join-btn:hover {
-  background: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background: #FF1493;
+  border-color: #FF1493;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
 }
 
 /* Dark mode header adjustments */
@@ -104,19 +128,19 @@
 }
 
 [data-theme="dark"] .nav-links a:not(.join-btn):hover {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(255, 105, 180, 0.15);
 }
 
 [data-theme="dark"] .join-btn {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  background: #FF69B4;
+  border-color: #FF69B4;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
 }
 
 [data-theme="dark"] .join-btn:hover {
-  background: var(--secondary-color);
-  border-color: var(--secondary-color);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  background: #FF1493;
+  border-color: #FF1493;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.5);
 }
 
 /* Mobile responsiveness - iPhone 13 and similar */

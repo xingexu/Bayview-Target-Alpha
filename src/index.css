@@ -1,35 +1,102 @@
 :root {
-  /* Light mode colors */
-  --primary-color: #059669;
-  --secondary-color: #10b981;
-  --accent-color: #34d399;
-  --light-accent: #6ee7b7;
-  --background-color: #ffffff;
-  --surface-color: #f8fafc;
-  --card-color: #ffffff;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
-  --shadow-color: rgba(5, 150, 105, 0.1);
-  --shadow-hover: rgba(5, 150, 105, 0.2);
+  /* Soft Japanese Cherry Blossom Theme - Light Mode */
+  --background-color: #FFEFF3; /* Light blossom blush */
+  --surface-color: #FFF5F8;
+  --section-background: linear-gradient(180deg, #FFEFF4 0%, #FFE2EC 60%, #FFF6F9 100%);
+  --card-color: #FFFFFF;
+  --tree-opacity-top: 0.95;
+  --tree-opacity-bottom: 0.95;
+  
+  /* Warm Pink Palette (default) */
+  --primary-color: #F7A4C1; /* Cherry blossom pink */
+  --secondary-color: #F4C2D7; /* Lighter cherry blossom pink */
+  --accent-color: #F7A4C1;
+  --light-accent: #F4C2D7;
+  
+  /* Text Colors */
+  --text-primary: #1b1b1b; /* Dark for readability */
+  --text-secondary: #4a4a4a;
+  --text-muted: #9B9B9B;
+  --text-dark: #3F2E2C; /* Cherry branch brown for contrast */
+  
+  /* Borders & Shadows */
+  --border-color: rgba(247, 164, 193, 0.2);
+  --shadow-color: rgba(247, 164, 193, 0.12);
+  --shadow-hover: rgba(247, 164, 193, 0.25);
+  --shadow-card: rgba(247, 164, 193, 0.08);
+  
+  /* Sakura Pattern Opacity */
+  --sakura-opacity-light: 0.03;
+  --sakura-opacity-normal: 0.06;
+  --sakura-opacity-heavy: 0.12;
+}
+
+/* Cool Pink Palette */
+[data-palette="cool"] {
+  --primary-color: #E8B4D4;
+  --secondary-color: #E8C8E0;
+  --accent-color: #E8B4D4;
+  --light-accent: #E8C8E0;
+  --shadow-color: rgba(232, 180, 212, 0.12);
+  --shadow-hover: rgba(232, 180, 212, 0.25);
+  --shadow-card: rgba(232, 180, 212, 0.08);
+  --border-color: rgba(232, 180, 212, 0.2);
+}
+
+/* Sakura Density */
+[data-sakura-density="light"] {
+  --sakura-opacity: var(--sakura-opacity-light);
+}
+
+[data-sakura-density="normal"] {
+  --sakura-opacity: var(--sakura-opacity-normal);
+}
+
+[data-sakura-density="heavy"] {
+  --sakura-opacity: var(--sakura-opacity-heavy);
 }
 
 [data-theme="dark"] {
-  /* Dark mode colors - much darker and richer green theme */
-  --primary-color: #10b981;
-  --secondary-color: #34d399;
-  --accent-color: #6ee7b7;
-  --light-accent: #a7f3d0;
-  --background-color: #031a0f;
-  --surface-color: #052e1a;
-  --card-color: #0a3d24;
-  --text-primary: #f0fdf4;
-  --text-secondary: #dcfce7;
-  --text-muted: #bbf7d0;
-  --border-color: #0f5132;
-  --shadow-color: rgba(16, 185, 129, 0.1);
-  --shadow-hover: rgba(16, 185, 129, 0.2);
+  /* Soft Japanese Cherry Blossom Theme - Dark Mode */
+  --background-color: #1D1A23; /* deep ink */
+  --surface-color: #241F2B;
+  --card-color: #2C2633;
+  --tree-opacity-top: 0.65;
+  --tree-opacity-bottom: 0.65;
+  --section-background: linear-gradient(180deg, #1b1521 0%, #130f19 100%);
+  
+  /* Pink Accents */
+  --primary-color: #FFA8D4;
+  --secondary-color: #FFBBD6;
+  --accent-color: #FF8EC7;
+  --light-accent: #FFD3EA;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #E1D7E5;
+  --text-muted: #B9AEC1;
+  --text-dark: #C4A8B0;
+  
+  /* Borders & Shadows */
+  --border-color: rgba(255, 168, 212, 0.35);
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --shadow-hover: rgba(255, 168, 212, 0.35);
+  --shadow-card: rgba(0, 0, 0, 0.6);
+  
+  /* Sakura Pattern Opacity (lighter in dark mode) */
+  --sakura-opacity-light: 0.08;
+  --sakura-opacity-normal: 0.14;
+  --sakura-opacity-heavy: 0.22;
+}
+
+[data-theme="dark"][data-palette="cool"] {
+  --primary-color: #CBB7FF;
+  --secondary-color: #E0CBFF;
+  --accent-color: #A98FFF;
+  --light-accent: #F1E7FF;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-hover: rgba(203, 183, 255, 0.35);
+  --border-color: rgba(203, 183, 255, 0.35);
 }
 
 /* Theme toggle button */
@@ -100,7 +167,7 @@ body {
 }
 
 .section {
-  background-color: var(--surface-color);
+  background: var(--section-background);
 }
 
 .card, .team-card, .event-card, .competition-card, .contact-item {
@@ -125,46 +192,68 @@ body {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 14px 32px;
+  border-radius: 16px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.03em;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--shadow-hover);
-  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--shadow-hover);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 14px 32px;
+  border-radius: 16px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  letter-spacing: 0.03em;
 }
 
 .btn-secondary:hover {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow-hover);
 }
 
 /* Section styles */
 .section {
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: var(--surface-color);
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -185,20 +274,21 @@ body {
   margin-right: auto;
 }
 
-/* Card styles */
+/* Card styles - Soft rounded corners with warm pink shadows */
 .card {
   background: var(--card-color);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 6px var(--shadow-color);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px var(--shadow-card), 0 2px 8px rgba(247, 164, 193, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  position: relative;
+  z-index: 1;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px var(--shadow-hover);
-  border-color: var(--primary-color);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px var(--shadow-hover), 0 4px 16px rgba(247, 164, 193, 0.15);
 }
 
 * {
@@ -212,13 +302,91 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+/* Sakura Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48ZyBpZD0ic2FrdXJhLXNtYWxsIj48cGF0aCBkPSJNMTAwIDIwIFE5MCAxNSA4NSAyNSBRODAgMzUgOTAgMzUgUTEwMCAzNSAxMTAgMjUgUTEwNSAxNSAxMDAgMjAiIGZpbGw9IiNGN0E0QzEiIG9wYWNpdHk9IjAuMyIvPjxwYXRoIGQ9Ik0xMDAgMjAgUTExMCAxNSAxMTUgMjUgUTEyMCAzNSAxMTAgMzUgUTEwMCAzNSA5MCAyNSBROTUgMTUgMTAwIDIwIiBmaWxsPSIjRjdBNEMxIiBvcGFjaXR5PSIwLjMiLz48cGF0aCBkPSJNMTAwIDIwIFE5MCAzMCAxMDAgNDAgUTEwMCA1MCA5NSA1MCBRMTAwIDUwIDEwMCA0MCBRMTAwIDMwIDEwMCAyMCIgZmlsbD0iI0Y3QTRDMSIgb3BhY2l0eT0iMC4zIi8+PHBhdGggZD0iTTEwMCAyMCBRMTAwIDMwIDEwMCA0MCBRMTAwIDUwIDEwNSA1MCBRMTAwIDUwIDEwMCA0MCBRMTAwIDMwIDEwMCAyMCIgZmlsbD0iI0Y3QTRDMSIgb3BhY2l0eT0iMC4zIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzIiBmaWxsPSIjRkZEOEYwIiBvcGFjaXR5PSIwLjQiLz48L2c+PC9kZWZzPjx1c2UgaHJlZj0iI3Nha3VyYS1zbWFsbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAsNDApIHNjYWxlKDAuMykiLz48dXNlIGhyZWY9IiNzYWt1cmEtc21hbGwiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0MCwxNDApIHNjYWxlKDAuMjUpIi8+PHVzZSBocmVmPSIjc2FrdXJhLXNtYWxsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCwxMjApIHNjYWxlKDAuMjgpIi8+PHVzZSBocmVmPSIjc2FrdXJhLXNtYWxsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjAsNjApIHNjYWxlKDAuMjcpIi8+PC9zdmc+');
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  opacity: var(--sakura-opacity);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-show-illustrations="false"] body::before {
+  display: none;
+}
+
+/* Global Petal Layer */
+#global-petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+html[data-petals-active="true"] #global-petals {
+  opacity: 0.65;
+}
+
+[data-show-illustrations="false"] #global-petals {
+  display: none;
+}
+
+/* Global Falling Sakura Petals */
+.sakura-petal {
+  position: absolute;
+  top: -10vh;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  animation-name: sakura-fall, sakura-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+@keyframes sakura-fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+@keyframes sakura-drift {
+  0% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: 30px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+[data-show-illustrations="false"] .sakura-petal {
+  display: none;
 }
 
 code {
@@ -250,7 +418,7 @@ code {
 }
 
 .btn-primary:hover {
-  background-color: #1e3a8a;
+  background: linear-gradient(135deg, #FF1493, #FF69B4);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }

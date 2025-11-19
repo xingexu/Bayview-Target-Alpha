@@ -1,6 +1,6 @@
-# Toronto Target Alpha Website
+# Markham Target Alpha Website
 
-A modern, responsive website for the Toronto chapter of Target Alpha Canada - Canada's largest student-led financial literacy organization.
+A modern, responsive website for the Markham chapter of Target Alpha Canada - Canada's largest student-led financial literacy organization.
 
 ## 🚀 Features
 
@@ -47,7 +47,7 @@ src/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd toronto-target-alpha
+cd markham-target-alpha
 ```
 
 2. Install dependencies:
@@ -115,10 +115,10 @@ This project is part of the Target Alpha Canada network and follows their organi
 
 ## 📞 Contact
 
-- **Toronto Chapter**: toronto@targetalpha.ca
+- **Markham Chapter**: markham@targetalpha.ca
 - **National Website**: [https://targetalpha.ca](https://targetalpha.ca)
-- **Location**: Greater Toronto Area, Ontario, Canada
+- **Location**: Markham, Ontario, Canada
 
 ---
 
-Built with ❤️ for Toronto's youth financial literacy community.
+Built with ❤️ for Markham's youth financial literacy community.

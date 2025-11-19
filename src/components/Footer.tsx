@@ -7,16 +7,11 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>York Region Target Alpha</h3>
+            <h3>Markham Target Alpha</h3>
             <p>
-              Empowering York Region's youth with financial literacy through education, 
+              Empowering Markham's youth with financial literacy through education, 
               workshops, and community engagement.
             </p>
-            <div className="social-links">
-              <a href="tel:6477617567" aria-label="Phone">📞</a>
-              <a href="mailto:yorkregiontargetalpha@gmail.com" aria-label="Email">📧</a>
-              <a href="#" aria-label="Instagram - Coming Soon">📸</a>
-            </div>
           </div>
           
           <div className="footer-section">
@@ -49,7 +44,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2025 York Region Target Alpha. All rights reserved.</p>
+            <p>&copy; 2025 Markham Target Alpha. All rights reserved.</p>
             <p>
               Part of the <a href="https://targetalpha.ca" target="_blank" rel="noopener noreferrer">Target Alpha Canada</a> network
             </p>

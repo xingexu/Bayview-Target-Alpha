@@ -1,5 +1,6 @@
 .events {
-  background: var(--background-white);
+  background: transparent;
+  padding: 5rem 0;
 }
 
 .events-grid {
@@ -22,35 +23,19 @@
 }
 
 .event-card {
-  background: var(--background-white);
+  background: var(--card-color);
   border: 1px solid var(--border-color);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 1.75rem;
+  padding: 2.75rem;
+  box-shadow: 0 20px 45px rgba(247, 164, 193, 0.18), 0 6px 18px rgba(247, 164, 193, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
-.event-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.02), rgba(16, 185, 129, 0.02));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.event-card:hover::after {
-  opacity: 1;
-}
-
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 30px 60px rgba(247, 164, 193, 0.25), 0 10px 25px rgba(247, 164, 193, 0.18);
 }
 
 .event-header {
@@ -70,23 +55,23 @@
 }
 
 .event-type.competition {
-  background: rgba(5, 150, 105, 0.1);
+  background: rgba(255, 105, 180, 0.15);
   color: var(--primary-color);
 }
 
 .event-type.summit {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(255, 182, 193, 0.15);
   color: var(--secondary-color);
 }
 
 .event-type.workshop {
-  background: rgba(52, 211, 153, 0.1);
+  background: rgba(255, 192, 203, 0.15);
   color: var(--accent-color);
 }
 
 .event-type.meeting {
-  background: rgba(139, 92, 246, 0.1);
-  color: #8b5cf6;
+  background: rgba(255, 190, 210, 0.15);
+  color: #ff7fb5;
 }
 
 .event-status {
@@ -99,17 +84,17 @@
 }
 
 .event-status.registration-open {
-  background: rgba(5, 150, 105, 0.1);
+  background: rgba(255, 105, 180, 0.15);
   color: var(--primary-color);
 }
 
 .event-status.coming-soon {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(255, 182, 193, 0.15);
   color: var(--secondary-color);
 }
 
 .event-status.ongoing {
-  background: rgba(52, 211, 153, 0.1);
+  background: rgba(255, 192, 203, 0.15);
   color: var(--accent-color);
 }
 
@@ -206,7 +191,7 @@
 }
 
 .competition-card {
-  background: var(--background-white);
+  background: #FFFFFF;
   border: 1px solid var(--border-color);
   border-radius: 1.5rem;
   padding: 2rem;
@@ -266,12 +251,12 @@
 }
 
 .deadline-status.registration-open {
-  background: rgba(5, 150, 105, 0.1);
+  background: rgba(255, 105, 180, 0.15);
   color: var(--primary-color);
 }
 
 .deadline-status.coming-soon {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(255, 182, 193, 0.15);
   color: var(--secondary-color);
 }
 
@@ -314,6 +299,10 @@
 .competition-details .detail-value {
   color: var(--text-primary);
   font-weight: 500;
+}
+
+[data-theme="dark"] .competition-card {
+  background: var(--card-color);
 }
 
 @media (max-width: 768px) {

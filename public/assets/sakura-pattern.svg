@@ -1,0 +1,16 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="sakura-small">
+      <path d="M100 20 Q90 15 85 25 Q80 35 90 35 Q100 35 110 25 Q105 15 100 20" fill="#F7A4C1" opacity="0.3"/>
+      <path d="M100 20 Q110 15 115 25 Q120 35 110 35 Q100 35 90 25 Q95 15 100 20" fill="#F7A4C1" opacity="0.3"/>
+      <path d="M100 20 Q100 30 100 40 Q100 50 95 50 Q100 50 100 40 Q100 30 100 20" fill="#F7A4C1" opacity="0.3"/>
+      <path d="M100 20 Q100 30 100 40 Q100 50 105 50 Q100 50 100 40 Q100 30 100 20" fill="#F7A4C1" opacity="0.3"/>
+      <circle cx="100" cy="100" r="3" fill="#FFD700" opacity="0.4"/>
+    </g>
+  </defs>
+  <use href="#sakura-small" transform="translate(40,40) scale(0.3)"/>
+  <use href="#sakura-small" transform="translate(140,140) scale(0.25)"/>
+  <use href="#sakura-small" transform="translate(60,120) scale(0.28)"/>
+  <use href="#sakura-small" transform="translate(120,60) scale(0.27)"/>
+</svg>
+

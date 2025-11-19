@@ -1,5 +1,6 @@
 .about {
-  background: var(--background-light);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .about-content {
@@ -28,10 +29,10 @@
 }
 
 .about-card {
-  background: var(--background-white);
+  background: var(--card-color);
   padding: 2.5rem;
   border-radius: 1.5rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 15px 30px var(--shadow-color);
   border: 1px solid var(--border-color);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -86,21 +87,27 @@
 }
 
 .about-image::before {
-  content: '💡';
+  content: '';
   position: absolute;
   top: -20px;
   left: 20px;
-  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 5 Q15 3 12 8 Q9 13 15 13 Q20 13 23 8 Q20 3 20 5" fill="%23FFB6C1"/><path d="M20 5 Q25 3 28 8 Q31 13 25 13 Q20 13 17 8 Q20 3 20 5" fill="%23FFB6C1"/><path d="M20 5 Q20 10 20 15 Q20 20 17 20 Q20 20 20 15 Q20 10 20 5" fill="%23FFB6C1"/><path d="M20 5 Q20 10 20 15 Q20 20 23 20 Q20 20 20 15 Q20 10 20 5" fill="%23FFB6C1"/><circle cx="20" cy="20" r="4" fill="%23FFD700"/></svg>');
+  background-size: contain;
   animation: bounce 2s ease-in-out infinite;
   z-index: 3;
 }
 
 .about-image::after {
-  content: '📈';
+  content: '';
   position: absolute;
   bottom: -20px;
   right: 20px;
-  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 5 Q15 3 12 8 Q9 13 15 13 Q20 13 23 8 Q20 3 20 5" fill="%23FFC0CB"/><path d="M20 5 Q25 3 28 8 Q31 13 25 13 Q20 13 17 8 Q20 3 20 5" fill="%23FFC0CB"/><path d="M20 5 Q20 10 20 15 Q20 20 17 20 Q20 20 20 15 Q20 10 20 5" fill="%23FFC0CB"/><path d="M20 5 Q20 10 20 15 Q20 20 23 20 Q20 20 20 15 Q20 10 20 5" fill="%23FFC0CB"/><circle cx="20" cy="20" r="4" fill="%23FFD700"/></svg>');
+  background-size: contain;
   animation: bounce 2s ease-in-out infinite 1s;
   z-index: 3;
 }
@@ -113,74 +120,47 @@
 .image-placeholder {
   width: 320px;
   height: 320px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background: var(--card-color);
   border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-primary);
   text-align: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 18px 35px var(--shadow-color);
   position: relative;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
 }
 
-.image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
-  animation: float 6s ease-in-out infinite;
-}
-
+.image-placeholder::before,
 .image-placeholder::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
-  border-radius: 2rem;
-  z-index: -1;
-  animation: rotate 8s linear infinite;
-  background-size: 400% 400%;
+  display: none;
 }
 
 .placeholder-content {
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: pulse 4s ease-in-out infinite;
+  color: var(--text-primary);
+  border: none;
+  backdrop-filter: none;
+  animation: none;
 }
 
 .placeholder-content h4 {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(45deg, #ffffff, #f0f9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .placeholder-content p {
-  opacity: 0.95;
+  opacity: 0.9;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 @keyframes float {

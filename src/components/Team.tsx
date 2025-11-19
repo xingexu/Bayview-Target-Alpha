@@ -41,15 +41,6 @@ const Team: React.FC = () => {
     },
     {
       id: 5,
-      name: "Kevin Li",
-      role: "Vice President",
-      school: "G.W. Williams Secondary School",
-      year: "Grade 11",
-      major: "",
-      bio: ""
-    },
-    {
-      id: 6,
       name: "Joshua Lo",
       role: "Co-President",
       school: "Bayview Secondary School",
@@ -58,25 +49,7 @@ const Team: React.FC = () => {
       bio: ""
     },
     {
-      id: 7,
-      name: "Abtin Aryanpour",
-      role: "Vice President",
-      school: "Bayview Secondary School",
-      year: "Grade 12",
-      major: "",
-      bio: ""
-    },
-    {
-      id: 8,
-      name: "Ruogu Qiu",
-      role: "Vice President",
-      school: "Richmond Hill High School",
-      year: "Grade 11",
-      major: "",
-      bio: ""
-    },
-    {
-      id: 9,
+      id: 6,
       name: "Daniel Chan",
       role: "Vice President",
       school: "St Augustine Catholic High School",
@@ -85,7 +58,7 @@ const Team: React.FC = () => {
       bio: ""
     },
     {
-      id: 10,
+      id: 7,
       name: "Mathew Singh",
       role: "Vice President",
       school: "Holy Trinity School",
@@ -100,7 +73,7 @@ const Team: React.FC = () => {
       <div className="container">
         <h2 className="section-title">Meet Our Team</h2>
         <p className="section-subtitle">
-          Our dedicated student leaders are committed to expanding financial literacy across York Region.
+          Our dedicated student leaders are committed to expanding financial literacy across Markham.
         </p>
         
         <div className="team-grid">

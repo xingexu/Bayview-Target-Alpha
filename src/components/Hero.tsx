@@ -1,38 +1,58 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
+  const heroRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // Load global sakura animation script (only once)
+    if (!document.getElementById('sakura-script')) {
+      const script = document.createElement('script');
+      script.id = 'sakura-script';
+      script.src = '/scripts/sakura.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  useEffect(() => {
+    const heroElement = heroRef.current;
+    if (!heroElement) return;
+
+    document.documentElement.setAttribute('data-hero-in-view', 'true');
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting;
+        document.documentElement.setAttribute('data-hero-in-view', inView ? 'true' : 'false');
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    observer.observe(heroElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" ref={heroRef}>
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Empowering York Region's Youth with
+              Empowering Markham's Youth with
               <span className="highlight"> Financial Literacy</span>
             </h1>
             <p className="hero-subtitle">
-              Join the emerging student-led financial literacy organization in York Region. 
+              Join the emerging student-led financial literacy organization in Markham. 
               Learn, grow, and build your financial knowledge alongside peers from across the region.
             </p>
             <div className="hero-buttons">
-              <a 
-                href="#about" 
-                className="btn btn-primary"
-                style={{ 
-                  display: 'inline-block',
-                  padding: '12px 24px',
-                  backgroundColor: '#059669',
-                  color: 'white',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  border: 'none',
-                  fontSize: '1rem',
-                  transition: 'all 0.3s ease'
-                }}
-              >
+              <a href="#about" className="btn btn-primary">
                 Learn More
               </a>
               <a 
@@ -40,19 +60,6 @@ const Hero: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-secondary"
-                style={{ 
-                  display: 'inline-block',
-                  padding: '12px 24px',
-                  backgroundColor: 'transparent',
-                  color: '#059669',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  border: '2px solid #059669',
-                  fontSize: '1rem',
-                  transition: 'all 0.3s ease'
-                }}
               >
                 Join Target Alpha
               </a>
@@ -65,7 +72,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="stat-item">
               <h3>8+</h3>
-              <p>York Region Schools</p>
+              <p>Members from 8+ Schools</p>
             </div>
             <div className="stat-item">
               <h3>3</h3>
@@ -74,7 +81,17 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="hero-background"></div>
+
+      <div className="hero-branches hero-branches-bottom" aria-hidden="true">
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/tree-left.png`}
+          alt=""
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/tree-right.png`}
+          alt=""
+        />
+      </div>
     </section>
   );
 };
