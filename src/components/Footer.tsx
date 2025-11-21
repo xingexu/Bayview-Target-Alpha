@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Markham Target Alpha</h3>
+            <h3>Bayview - Richmond Hill Target Alpha</h3>
             <p>
-              Empowering Markham's youth with financial literacy through education, 
+              Empowering Richmond Hill's youth with financial literacy through education, 
               workshops, and community engagement.
             </p>
           </div>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2025 Markham Target Alpha. All rights reserved.</p>
+            <p>&copy; 2025 Bayview - Richmond Hill Target Alpha. All rights reserved.</p>
             <p>
               Part of the <a href="https://targetalpha.ca" target="_blank" rel="noopener noreferrer">Target Alpha Canada</a> network
             </p>

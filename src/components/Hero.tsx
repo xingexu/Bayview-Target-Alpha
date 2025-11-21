@@ -44,11 +44,11 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Empowering Markham's Youth with
+              Empowering Richmond Hill's Youth with
               <span className="highlight"> Financial Literacy</span>
             </h1>
             <p className="hero-subtitle">
-              Join the emerging student-led financial literacy organization in Markham. 
+              Join the emerging student-led financial literacy organization in Richmond Hill. 
               Learn, grow, and build your financial knowledge alongside peers from across the region.
             </p>
             <div className="hero-buttons">

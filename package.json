@@ -1,7 +1,7 @@
 {
-  "name": "markham-target-alpha",
+  "name": "bayview-richmond-hill-target-alpha",
   "version": "1.0.0",
-  "description": "Markham Target Alpha - Promoting financial literacy among youth",
+  "description": "Bayview - Richmond Hill Target Alpha - Promoting financial literacy among youth",
   "private": true,
   "dependencies": {
     "@types/node": "^18.0.0",

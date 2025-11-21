@@ -64,7 +64,7 @@ const Team: React.FC = () => {
       <div className="container">
         <h2 className="section-title">Meet Our Team</h2>
         <p className="section-subtitle">
-          Our dedicated student leaders are committed to expanding financial literacy across Markham.
+          Our dedicated student leaders are committed to expanding financial literacy across Richmond Hill.
         </p>
         
         <div className="team-grid">

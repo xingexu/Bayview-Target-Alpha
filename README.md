@@ -1,6 +1,6 @@
-# Markham Target Alpha Website
+# Bayview - Richmond Hill Target Alpha Website
 
-A modern, responsive website for the Markham chapter of Target Alpha Canada - Canada's largest student-led financial literacy organization.
+A modern, responsive website for the Bayview - Richmond Hill chapter of Target Alpha Canada - Canada's largest student-led financial literacy organization.
 
 ## 🚀 Features
 
@@ -47,7 +47,7 @@ src/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd markham-target-alpha
+cd bayview-richmond-hill-target-alpha
 ```
 
 2. Install dependencies:
@@ -115,10 +115,10 @@ This project is part of the Target Alpha Canada network and follows their organi
 
 ## 📞 Contact
 
-- **Markham Chapter**: markham@targetalpha.ca
+- **Bayview - Richmond Hill Chapter**: bayview.richmondhill@targetalpha.ca
 - **National Website**: [https://targetalpha.ca](https://targetalpha.ca)
-- **Location**: Markham, Ontario, Canada
+- **Location**: Richmond Hill, Ontario, Canada
 
 ---
 
-Built with ❤️ for Markham's youth financial literacy community.
+Built with ❤️ for Richmond Hill's youth financial literacy community.

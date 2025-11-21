@@ -5,8 +5,8 @@ const Events: React.FC = () => {
   const events = [
     {
       id: 1,
-      title: "Markham Chapter Introductory Meeting",
-      description: "Join us for our introductory meeting where we'll discuss our mission, upcoming events, and how you can get involved in promoting financial literacy across Markham.",
+      title: "Bayview - Richmond Hill Chapter Introductory Meeting",
+      description: "Join us for our introductory meeting where we'll discuss our mission, upcoming events, and how you can get involved in promoting financial literacy across Richmond Hill.",
       date: "September 1, 2025",
       type: "Meeting",
       location: "Google Meet",
@@ -161,7 +161,7 @@ const Events: React.FC = () => {
         <div className="events-cta">
           <h3>Want to Join Our Chapter?</h3>
           <p>
-            Are you a student in Markham interested in joining Markham Target Alpha? 
+            Are you a student in Richmond Hill interested in joining Bayview - Richmond Hill Target Alpha? 
             We're always looking for passionate members to help grow our 50-member chapter.
           </p>
           <a href="#contact" className="btn btn-primary">Join Our Chapter</a>

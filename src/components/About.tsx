@@ -5,10 +5,10 @@ const About: React.FC = () => {
   return (
     <section className="about section" id="about">
       <div className="container">
-        <h2 className="section-title">About Markham Target Alpha</h2>
+        <h2 className="section-title">About Bayview - Richmond Hill Target Alpha</h2>
         <p className="section-subtitle">
-          We're the Markham chapter of Canada's largest student-led financial literacy organization, 
-          dedicated to empowering youth with essential financial knowledge and skills across Markham.
+          We're the Bayview - Richmond Hill chapter of Canada's largest student-led financial literacy organization, 
+          dedicated to empowering youth with essential financial knowledge and skills across Richmond Hill.
         </p>
         
         <div className="about-content">
@@ -16,7 +16,7 @@ const About: React.FC = () => {
             <div className="about-card">
               <h3>Our Mission</h3>
               <p>
-                To promote financial literacy among Markham's youth through engaging workshops, 
+                To promote financial literacy among Richmond Hill's youth through engaging workshops, 
                 educational resources, and collaborative learning experiences. We believe every young 
                 person deserves the knowledge and tools to make informed financial decisions.
               </p>
@@ -36,7 +36,7 @@ const About: React.FC = () => {
               <p>
                 Gain practical financial skills, network with like-minded peers, participate in 
                 exciting activities, and build a strong foundation for your financial future. 
-                Plus, connect with professionals in the financial industry across Markham.
+                Plus, connect with professionals in the financial industry across Richmond Hill.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const About: React.FC = () => {
           <div className="about-image">
             <div className="image-placeholder">
               <div className="placeholder-content">
-                <h4>Target Alpha Markham</h4>
+                <h4>Target Alpha Bayview - Richmond Hill</h4>
                 <p>Building Financial Leaders of Tomorrow</p>
               </div>
             </div>
