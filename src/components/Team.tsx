@@ -24,7 +24,7 @@ const Team: React.FC = () => {
     {
       id: 3,
       name: "Trinity Chung",
-      role: "Co-President",
+      role: "Marketing Officer",
       school: "St Augustine Catholic High School",
       year: "Grade 12",
       major: "",
@@ -33,7 +33,7 @@ const Team: React.FC = () => {
     {
       id: 4,
       name: "Harrison Wang",
-      role: "Co-President",
+      role: "Logistics Officer",
       school: "Appleby College",
       year: "Grade 11",
       major: "",
@@ -42,7 +42,7 @@ const Team: React.FC = () => {
     {
       id: 5,
       name: "Joshua Lo",
-      role: "Co-President",
+      role: "Social Media Officer",
       school: "Bayview Secondary School",
       year: "Grade 12",
       major: "",
