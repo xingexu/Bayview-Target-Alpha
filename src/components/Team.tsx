@@ -5,6 +5,24 @@ const Team: React.FC = () => {
   const teamMembers = [
     {
       id: 1,
+      name: "Daniel Chan",
+      role: "President",
+      school: "St Augustine Catholic High School",
+      year: "Grade 11",
+      major: "",
+      bio: ""
+    },
+    {
+      id: 2,
+      name: "Chloe Huang",
+      role: "Vice President",
+      school: "St Augustine Catholic High School",
+      year: "Grade 12",
+      major: "",
+      bio: ""
+    },
+    {
+      id: 3,
       name: "Xinge Xu",
       role: "Co-President",
       school: "Bayview Secondary School",
@@ -13,16 +31,7 @@ const Team: React.FC = () => {
       bio: ""
     },
     {
-      id: 2,
-      name: "Chloe Huang",
-      role: "Co-President",
-      school: "St Augustine Catholic High School",
-      year: "Grade 12",
-      major: "",
-      bio: ""
-    },
-    {
-      id: 3,
+      id: 4,
       name: "Trinity Chung",
       role: "Marketing Officer",
       school: "St Augustine Catholic High School",
@@ -31,7 +40,7 @@ const Team: React.FC = () => {
       bio: ""
     },
     {
-      id: 4,
+      id: 5,
       name: "Harrison Wang",
       role: "Logistics Officer",
       school: "Appleby College",
@@ -40,20 +49,11 @@ const Team: React.FC = () => {
       bio: ""
     },
     {
-      id: 5,
+      id: 6,
       name: "Joshua Lo",
       role: "Social Media Officer",
       school: "Bayview Secondary School",
       year: "Grade 12",
-      major: "",
-      bio: ""
-    },
-    {
-      id: 6,
-      name: "Daniel Chan",
-      role: "Vice President",
-      school: "St Augustine Catholic High School",
-      year: "Grade 11",
       major: "",
       bio: ""
     }
